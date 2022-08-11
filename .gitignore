@@ -1,0 +1,5 @@
+auth.json
+thingenv/
+.idea/
+__pycache__/
+working_dir/
