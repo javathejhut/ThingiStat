@@ -86,11 +86,10 @@ def thing_download_sweep(last_id, ids_list, timeout=1, db_filename='default_thin
         thing_id = int(ids_list[thing_id_index])
         # API urls
         urls = {'thing': construct_url(thing_id), 'images': construct_url(thing_id, "/images"),
-                'files': construct_url(thing_id, "/files"), 'likes': construct_url(thing_id, "/likes")}
+                'files': construct_url(thing_id, "/files"), 'likes': construct_url(thing_id, "/likes"),
+                'categories': construct_url(thing_id, "/categories")}
 
         # performing API requests, conforming to default request limit of 300 per 5 minutes
-
-        # first try extracting 'thing' json, only continuing if present
         json_dict = {'thing': make_request(urls['thing'], thing_id)}
         time.sleep(timeout)
 

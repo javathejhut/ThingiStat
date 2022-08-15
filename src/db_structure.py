@@ -4,7 +4,7 @@ import sys
 SRC_DIR = os.path.dirname(os.path.abspath(__file__))  # abspath root/src/
 PROJECT_ROOT = os.path.dirname(SRC_DIR)  # abspath root/
 DB_DIR = os.path.join(PROJECT_ROOT, "thing_db")  # root/thing_db
-# sys.path.append(PROJECT_ROOT)
+sys.path.append(PROJECT_ROOT)
 # db schema
 
 DB_TABLES = ['''things (
@@ -41,6 +41,8 @@ DB_TABLES = ['''things (
                     tags TEXT,
                     ancestor_ids TEXT,
                     creator_id INT,
+                    accessed TEXT,
+                    categories TEXT,
                     
                     FOREIGN KEY(creator_id) REFERENCES creators (id)
                     ) ''',
@@ -57,9 +59,15 @@ DB_TABLES = ['''things (
                     location TEXT
                     )''',
              '''tags (
-                    name TEXT,
+                    name TEXT PRIMARY KEY,
                     tag TEXT,
                     absolute_url TEXT,
                     count INT
+                    )''',
+             '''categories (
+                    id INT PRIMARY KEY,
+                    name TEXT,
+                    count INT,
+                    slug TEXT
                     )'''
              ]
