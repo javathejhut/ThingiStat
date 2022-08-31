@@ -38,10 +38,10 @@ session = requests.Session()
 session.headers.update({"Authorization": "Bearer %s" % (auth_config['access_token'])})
 
 
-def make_request(url, thing_id, attempts=3):
+def make_request(url, thing_id, attempts=3, readtimeout=10):
     for i in range(attempts):
         try:
-            r = session.request(method="GET", url=url)
+            r = session.request(method="GET", url=url, timeout=readtimeout)
             r.raise_for_status()
 
             json_content = json.loads(r.content)

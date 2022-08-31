@@ -108,6 +108,10 @@ class ThingDB:
     #     query = "UPDATE %s SET instructions = null WHERE instructions = 'NULL' " % table
     #     with DBCursor(self.db_path) as cursor:
     #         cursor.execute(query)
+    # def drop_some_entries(self, table):
+    #     query = "ALTER TABLE %s DROP COLUMN SET instructions = null WHERE instructions = 'NULL' " % table
+    #     with DBCursor(self.db_path) as cursor:
+    #         cursor.execute(query)
 
     def dataframe_from_query(self, query):
         with DBCursor(self.db_path) as cursor:
@@ -142,7 +146,7 @@ class ThingDB:
         creator_id = json_dict['thing']['creator']['id']
         added_images_count = len(convert_none_dict_to_empty(json_dict['images'])) - \
                              len(convert_none_dict_to_empty(json_dict['files']))
-        likes_count = len(convert_none_dict_to_empty(json_dict['likes']))
+        #likes_count = len(convert_none_dict_to_empty(json_dict['likes']))
         accessed = datetime.utcnow().strftime("%Y-%m-%dT%H:%M:%S+00:00")  # time downloaded in UTC
 
         # average downloads
@@ -236,7 +240,6 @@ class ThingDB:
                                                                  thing_dict.get('is_derivative', None),
                                                                  thing_dict.get('can_comment', None),
                                                                  added_images_count,
-                                                                 likes_count,
                                                                  likes_ids,
                                                                  average_downloads_count,
                                                                  tags,
