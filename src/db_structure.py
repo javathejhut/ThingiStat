@@ -35,7 +35,6 @@ DB_TABLES = ['''things (
                     is_derivative INT,
                     can_comment INT,
                     added_images_count INT,
-                    likes_count INT,
                     likes_ids TEXT,
                     average_download_count INT,
                     tags TEXT,
