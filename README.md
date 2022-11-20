@@ -118,7 +118,7 @@ More examples of database interaction and visualization are shown in the Jupyter
 
 ## Insights from a preliminary analysis
 
-In an initial exploration, I trained a Random Forest Regressor on a subset of thing and creator features to predict the  download_count of models. The total dataset at this stage consists of the metadata of ~150,000 3D models .R<sup>2</sup> values for the train/test were 0.757/0.762 following a hyperparameter grid search optimizing R<sup>2</sup> in cross-validation of the training set (the full EDA and model construction can be found in /notebooks/EDA_feature_engineering_importance.ipynb).
+In an initial exploration, I trained a Random Forest Regressor on a subset of thing and creator features to predict the  download_count of models. The total dataset at this stage consists of the metadata of ~150,000 3D models. R<sup>2</sup> values for the train/test were 0.757/0.762 following a hyperparameter grid search optimizing R<sup>2</sup> in cross-validation of the training set (the full EDA and model construction can be found in /notebooks/EDA_feature_engineering_importance.ipynb).
 
 Given this model of download counts, what features are most important, or most predictive with respect to download count?
 
@@ -130,7 +130,7 @@ To first explore feature importance, I consider the average reduction in varianc
 
 ### Feature importance via permutation importance
 
-An alternative measurement of feature importance, and one that addresses the potential bias of variance feature importance, is permutation importance. This is computed by applying the model to a test/train set as usual to generate a reference test score. Then for a specific column in the dataset (column is a feature), this column is randomly shuffled with another column and the test score is computed again. By comparing the referEnce test score with the average permuted score over a defined number of iterations, this yields the permutation importance score:
+An alternative measurement of feature importance, and one that addresses the potential bias of variance feature importance, is permutation importance. This is computed by applying the model to a test/train set as usual to generate a reference test score. Then for a specific column in the dataset (column is a feature), this column is randomly shuffled with another column and the test score is computed again. By comparing the reference test score with the average permuted score over a defined number of iterations, this yields the permutation importance score:
 
 <img align="center" src="./demo/permutation_feature_importance.png" width=1000px alt="variance feature importance">
 
