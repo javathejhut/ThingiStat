@@ -20,12 +20,10 @@ To explore why this is so, let's look at how a model is presented to users on Th
 <img align="center" src="./demo/post_example.png" width=1000px alt="example page">
 
 <br/>
-<br/>
 This page is not unlike a social media or blog post. Model files are provided alongside pictures, a description, and a section for comments. The content of all of these page sections can vary significantly between similar model posts. A variety of buttons also exist, including "Download All Files", "Collect Thing", "Tip Designer" etc.
 While Thingiverse algorithms can influence visibility and therefore model popularity (measured by download count), they have been known to be poor, so to simplify my analysis I neglect their effects.
 If this is a bad assumption, and download activity is dominated by their algorithms, then this is an opportunity to learn what features of models Thingiverse algorithms look for to promote.
 
-<br/>
 <br/>
 So, what can we learn about the steps users can take to improve the popularity of their models? And what are the actions of users on Thingiverse that correlate with them downloading a model?
 
